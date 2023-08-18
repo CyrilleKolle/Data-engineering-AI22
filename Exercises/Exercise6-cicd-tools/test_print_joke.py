@@ -1,15 +1,17 @@
-from print_joke import get_random_reaction
+from print_joke import get_random_reaction, print_random_joke_and_reaction
 
 
 def test_get_random_reaction_type():
     reaction = get_random_reaction()
-    assert False # Replace False with a check that makes sure the reaction is a string type
+    assert isinstance(reaction, str)
 
 
 def test_get_random_reaction_repeats():
-    # Write a test that checks that multiple calls to get_random_reaction()
-    # doesn't give you the same reaction every time
-    pass 
+    reactions_set = {get_random_reaction() for _ in range(100)}
+    assert len(reactions_set) == 10
 
 
-# Come up with a test of your own and implement it here.
+def test_get_random_joke_and_reaction_unique():
+    complete_joke_set = {print_random_joke_and_reaction() for _ in range(5)}
+
+    assert len(complete_joke_set) == 1

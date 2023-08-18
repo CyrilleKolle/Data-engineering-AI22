@@ -1,0 +1,27 @@
+name: Python run CI CD
+
+on: [push]
+jobs:
+  run_ci_cd_pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Git clone repo
+      - name: Checkout Git Repo
+        uses: actions/checkout@v3
+
+      # Install Python
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      # Install requirements
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      # Run tests
+      - name: Test with pytest
+        run: |
+          pytest Exercises/Exercise6-cicd-tools/
