@@ -23,9 +23,9 @@ def get_random_reaction():
 def print_random_joke_and_reaction():
     random_reaction = get_random_reaction()
     random_joke = pyjokes.get_joke()
-    
-    
-    print(f'{random_joke} \n{random_reaction}')
+
+    print(f"{random_joke} \n{random_reaction}")
+
 
 if __name__ == "__main__":
     print_random_joke_and_reaction()
