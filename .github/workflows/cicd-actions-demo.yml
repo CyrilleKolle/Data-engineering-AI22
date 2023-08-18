@@ -24,4 +24,4 @@ jobs:
       # Run tests
       - name: Test with pytest
         run: |
-          pytest tests/
+          pytest Exercises/Exercise6-cicd-tools/
