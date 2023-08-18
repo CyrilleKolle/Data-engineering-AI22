@@ -16,12 +16,14 @@ reactions = [
 
 
 def get_random_reaction():
-    return pyjokes.get_joke()
+    random_reaction = random.choice(reactions)
+    return random_reaction
 
 
 def print_random_joke_and_reaction():
-    random_joke = get_random_reaction()
-    random_reaction = random.choice(reactions)
+    random_reaction = get_random_reaction()
+    random_joke = pyjokes.get_joke()
+    
     
     print(f'{random_joke} \n{random_reaction}')
 
